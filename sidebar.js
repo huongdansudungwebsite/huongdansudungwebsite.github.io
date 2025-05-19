@@ -16,6 +16,6 @@ const sidebar = {
 
 $(document).ready(function(){
 	$.each(sidebar, function(index, item){
-		$('.sidebar ul').append('<li><a href="'+item.href+'">'+item.text+'</a></li>')
+		$('.sidebar ul').append('<li><a href="'+item.href+'"><span>'+item.text+'</span></a></li>')
 	})
 })
