@@ -50,25 +50,37 @@ body{
 }
 .sidebar a{
  	text-decoration: none;
- 	padding: 5px 10px;
  	color: #333;
  	display: flex;
  	align-items: center;
-    border-radius: 4px;
 }
 .sidebar a:before{
     content: '';
     background-color: #fff;
     display: block;
-    height: 16px;
+    height: 24px;
     width: 4px;
     margin-right: 5px;
     border-radius: 2px;
 }
-.sidebar a:hover{
+.sidebar a span{
+	display: block;
+	width: 100%;
+ 	padding: 5px 10px;
+    border-radius: 4px;
+}
+.sidebar a:hover span{
     background-color: #eee;
 }
 .sidebar a:hover::before{
+    background-color: #fff;
+}
+
+.sidebar a.active::before{
+    background-color: #3F51B5;
+}
+
+.sidebar a.active span{
     background-color: #eee;
 }
 
