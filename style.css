@@ -1,12 +1,60 @@
-.main{
-	display: flex;
+
+html,body {
+    height:100%;
 }
-.main .sidebar{
+body{
+	font-family: "Mona Sans", sans-serif;
+	overflow: hidden;
+}
+
+.main{
+	height: 100%
+}
+.main .header{
+	position: fixed;
+    width: 100%;
+    border-bottom: 1px solid #cdcdcd;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+    padding: 20px 15px;
+    height: 65px;
+    box-shadow: 0 0 11px #cdcdcd;
+}
+.main .header .title{
+    font-weight: bold;
+    color: #444;
+    display: flex;
+    align-items: center;
+}
+.main .inner{
+	display: flex;
+	padding-top: 65px;
+	height: 100%;
+}
+
+.sidebar{
 	width: 280px;
     align-self: start;
-    min-height: 100vh;
+    min-height: 100%;
     background: #e3e3e3;
+    overflow-y: scroll;
 }
-.main .content{
+.sidebar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.sidebar a{
+ 	text-decoration: none;
+ 	padding: 5px 10px;
+ 	color: #333;
+ 	display: block;
+}
+
+.content{
 	flex: 1;
+	overflow-y: scroll;
+	padding: 15px;
 }
