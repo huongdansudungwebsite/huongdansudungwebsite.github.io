@@ -117,9 +117,13 @@
     <script type="text/javascript" src="./sidebar.js"></script>
     <script type="text/javascript">
     	$('body').on('click','.sidebar a',function(e){
-    		var hash = window.location.hash;
-    		console.log(hash)
-    		$(".content").load(hash); 
+	    		var hash = window.location.hash;
+	    		console.log(hash)
+	    		e.preventDefault()
+	    		$.get(hash).then(function(responseData) {
+			  $('.content').append(responseData);
+			});
+		});
     	})
     </script>
   </body>
