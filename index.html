@@ -4,39 +4,122 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hướng dẫn sử dụng website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./bootstrap-5.0.2-dist/css/bootstrap.min.css">
     <link href="./style.css" rel="stylesheet">
   </head>
   <body>
     <div class="main">
-    	<div class="sidebar">
-    		<div class="title fs-4 text-uppercase text-center">
-    			Hướng dẫn
+    	<div class="header">
+    		<div class="title text-uppercase">
+    			<span class="mr-3"><ion-icon name="settings-outline"></ion-icon></span> Hướng dẫn sử dụng admin
     		</div>
-    		<ul>
-    			<li>
-    				<a href="">
-    					dddd
-    				</a>
-    			</li>
-    		</ul>
     	</div>
-    	<div class="content">
-    		<div>
-    			<a id="test">fff</a>
-    		</div>
+    	<div class="inner">
+    		<div class="sidebar">
+	    		<ul>
+	    		</ul>
+	    	</div>
+	    	<div class="content">
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    		<div>
+	    			<a id="test">fff</a>
+	    		</div>
+	    	</div>
     	</div>
     </div>
+	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+    <script type="text/javascript" src="./sidebar.js"></script>
     <script type="text/javascript">
-    	$('#test').click(function(e){
-    		e.preventDefault()
-		history.pushState({},"Results for `Cats`",'url?s=cats');
-  //   		$.get('test.html').then(function(responseData) {
-		//   $('.content').append(responseData);
-		// });
+    	$('body').on('click','.sidebar a',function(e){
+    		var hash = window.location.hash;
+    		console.log(hash)
+    		$(".content").load(hash); 
     	})
     </script>
   </body>
