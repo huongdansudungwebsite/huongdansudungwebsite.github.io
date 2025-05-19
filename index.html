@@ -58,21 +58,25 @@
     	  if (href.length > 0) {
     	  	if(href=='/'){
     	  		 //index page
-	        	init_page('#index_page')
+						get_content('index_page')
             $('a[href="/"]').addClass('active')
+          	history.pushState('', "", '/');
     	  	}
     	  	else{
     	  		var hash_string = href.substring(1);
-            $.get(hash_string).done(function(content) {
-              $(".content").html(content)
-              $("a[href='"+href+"']").addClass('active')
-            }).fail(function() {
-            	$(".content").html('').prepend('<div class="alert alert-warning">Trang không tồn tại</div>')
-            })
+            get_content(hash_string)
+          	history.pushState('', "", href);
     	  	}
-          history.pushState('', "", href);
 
         }
+      }
+      function get_content(page){
+			  $.get('./pages/'+page).done(function(content) {
+	        $(".content").html(content)
+	        $("a[href='#"+page+"']").addClass('active')
+	      }).fail(function() {
+	      	$(".content").html('').prepend('<div class="alert alert-warning">Trang không tồn tại</div>')
+	      })
       }
     </script>
   </body>
