@@ -1,4 +1,12 @@
 const sidebar = {
+	home :{
+		'text': 'Home',
+		'href': '/',
+	},
+	post :{
+		'text': 'Bài viết',
+		'href': '#post',
+	},
 	slide :{
 		'text': 'Slide',
 		'href': '#slide',
