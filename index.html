@@ -51,7 +51,7 @@
         var href = $(this).attr('href')
         console.log(href)
         if (href == '/') {
-        	init_page('#index')
+        	init_page('#index_page')
         	history.pushState('', "", '/');
         } else {
           history.pushState('', "", href);
