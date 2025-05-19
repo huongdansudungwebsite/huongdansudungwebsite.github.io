@@ -38,7 +38,7 @@
         var hash = window.location.hash;
         console.log(hash)
         if(hash == ''){
-        	init_page('#index_page')
+        	init_page('/')
         }
         else{
         	init_page(hash)
@@ -50,24 +50,29 @@
         e.preventDefault()
         var href = $(this).attr('href')
         console.log(href)
-        if (href == '/') {
-        	init_page('#index_page')
-        	history.pushState('', "", '/');
-        } else {
-          history.pushState('', "", href);
-          init_page(href)
-        }
+        init_page(href)
       })
 
       function init_page(href){
-      	  if (href.length > 0) {
-            var hash_string = href.substring(1);
+    		$('.sidebar a').removeClass('active')
+    	  if (href.length > 0) {
+    	  	if(href=='/'){
+    	  		 //index page
+	        	init_page('#index_page')
+            $('a[href="/"]').addClass('active')
+    	  	}
+    	  	else{
+    	  		var hash_string = href.substring(1);
             $.get(hash_string).done(function(content) {
               $(".content").html(content)
+              $("a[href='"+href+"']").addClass('active')
             }).fail(function() {
             	$(".content").html('').prepend('<div class="alert alert-warning">Trang không tồn tại</div>')
             })
-          }
+    	  	}
+          history.pushState('', "", href);
+
+        }
       }
     </script>
   </body>
