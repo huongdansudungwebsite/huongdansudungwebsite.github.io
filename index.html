@@ -33,9 +33,10 @@
     <script type="text/javascript">
     	$('#test').click(function(e){
     		e.preventDefault()
-    		$.get('test.html').then(function(responseData) {
-		  $('.content').append(responseData);
-		});
+		history.pushState({},"Results for `Cats`",'url?s=cats');
+  //   		$.get('test.html').then(function(responseData) {
+		//   $('.content').append(responseData);
+		// });
     	})
     </script>
   </body>
