@@ -8,6 +8,12 @@ $(document).ready(function() {
 		init_page(hash)
 	}
 
+	$('.bars, .close, .blur-layer').click(function(){
+		$('html').toggleClass('menu-active')
+	})
+
+	
+
 })
 
 $('body').on('click', '.sidebar a', function(e) {
@@ -42,4 +48,6 @@ function get_content(page){
 		// $(".content").html('').prepend('<div class="alert alert-warning">Trang không tồn tại</div>')
 		get_content('not_found')
 	})
+	$('html').removeClass('menu-active')
 }
+
