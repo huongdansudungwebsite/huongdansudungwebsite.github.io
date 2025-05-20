@@ -15,9 +15,12 @@
     <div class="main">
       <div class="header">
         <div class="title text-uppercase">
-          <span class="mr-3">
+          <span class="me-1">
             <ion-icon name="settings-outline"></ion-icon>
-          </span> Hướng dẫn sử dụng admin
+          </span> 
+          <span>
+          	Hướng dẫn sử dụng admin
+          </span>
         </div>
       </div>
       <div class="inner">
@@ -33,51 +36,6 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script type="text/javascript" src="./sidebar.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        var hash = window.location.hash;
-        console.log(hash)
-        if(hash == ''){
-        	init_page('/')
-        }
-        else{
-        	init_page(hash)
-        }
-        
-      })
-
-      $('body').on('click', '.sidebar a', function(e) {
-        e.preventDefault()
-        var href = $(this).attr('href')
-        console.log(href)
-        init_page(href)
-      })
-
-      function init_page(href){
-    		$('.sidebar a').removeClass('active')
-    	  if (href.length > 0) {
-    	  	if(href=='/'){
-    	  		 //index page
-						get_content('index_page')
-            $('a[href="/"]').addClass('active')
-          	history.pushState('', "", '/');
-    	  	}
-    	  	else{
-    	  		var hash_string = href.substring(1);
-            get_content(hash_string)
-          	history.pushState('', "", href);
-    	  	}
-
-        }
-      }
-      function get_content(page){
-			  $.get('./pages/'+page).done(function(content) {
-	        $(".content").html(content)
-	        $("a[href='#"+page+"']").addClass('active')
-	      }).fail(function() {
-	      	$(".content").html('').prepend('<div class="alert alert-warning">Trang không tồn tại</div>')
-	      })
-      }
-    </script>
+    <script type="text/javascript" src="./script.js"></script>
   </body>
 </html>
